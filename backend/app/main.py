@@ -1,7 +1,9 @@
 import time
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import APIRouter, FastAPI
+from .routers import tickets
+
 from sqlalchemy import select
 from sqlalchemy.exc import OperationalError
 
@@ -48,7 +50,12 @@ app = FastAPI(title="HelpDesk API", lifespan=lifespan)
 def health():
     return {"status": "ok"}
 
+"""
 @app.get("/api/hello/{name}")
 def hello(name: str):
     return {"message": f"Hola, {name}"}
+"""
 
+api = APIRouter(prefix="/api")
+api.include_router(tickets.router)
+app.include_router(api)
