@@ -27,6 +27,9 @@ class UserOut(ORM):
     role: Role
     is_active: bool
 
+class UserUpdate(BaseModel):
+    role: Role | None = None
+    is_active: bool | None = None
 
 class TokenOut(BaseModel):
     access_token: str

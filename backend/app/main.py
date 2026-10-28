@@ -2,7 +2,7 @@ import time
 from contextlib import asynccontextmanager
 
 from fastapi import APIRouter, FastAPI
-from .routers import auth, tickets
+from .routers import auth, tickets, users
 
 from sqlalchemy import select
 from sqlalchemy.exc import OperationalError
@@ -59,4 +59,5 @@ def hello(name: str):
 api = APIRouter(prefix="/api")
 api.include_router(auth.router)
 api.include_router(tickets.router)
+api.include_router(users.router)
 app.include_router(api)
