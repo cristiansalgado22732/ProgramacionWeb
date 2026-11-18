@@ -4,4 +4,4 @@ header a.active, header a:hover { color: #fff; }
 .brand { font-weight: 700; font-size: 1.1rem; color: #fff !important; }
 nav { display: flex; gap: 16px; flex: 1; }
 .session { display: flex; align-items: center; gap: 12px; margin-left: auto; }
-main { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+main { max-width: 960px; margin: 24px auto; padding: 0 16px; }  
